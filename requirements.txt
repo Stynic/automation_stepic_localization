@@ -1,0 +1,11 @@
+# Selenium
+selenium==3.14.0
+
+# WebDriver
+webdriver-manager==2.3.0
+
+# Test Framework
+pytest==5.1.1
+
+# Plagin for pytest
+pytest-rerunfailures==7.0
