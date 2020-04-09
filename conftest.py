@@ -19,16 +19,11 @@ def browser(request):
     browser = None
     if browser_name == 'chrome':
         print('\nstart chrome browser for test..')
-        options = Options()
-        options.add_experimental_option(
-            'prefs', {'intl.accept_languages': 'user_language'})
-        browser = webdriver.Chrome(options=options)
+        browser = webdriver.Chrome()
     elif browser_name == 'firefox':
         print('\nstart firefox browser for test..')
-        fb = webdriver.FirefoxProfile()
-        fb.set_preference("intl.accept_languages", user_language)
         browser = webdriver.Firefox(executable_path=GeckoDriverManager()
-                                    .install(), firefox_profile=fb)
+                                    .install())
     else:
         raise pytest.UsageError('--browser_name should be chrome or firefox')
     yield browser
